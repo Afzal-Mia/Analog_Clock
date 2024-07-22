@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: sans-serif;
+}
+body{
+    background-color: rgba(46, 47, 48, 0.89);
+    color:white;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    justify-content: center;
+    align-items: center;
+    min-height:100vh;
+    background-color: #249ce66f;
+    /* background-image: url(./Gemini_Generated_Image_xh8kw2xh8kw2xh8k.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position:center;
+}
+.container{
+order:2;
+    overflow:hidden;
+    position:relative;
+    box-shadow: 0px 0px 3px 11px rgb(0, 0, 0);
+    border-radius: 50%;
+    /* below code was just to check the functionality */
+    /* border:2px solid green; */
+}
+.clock{
+    width:300px;
+    height:300px;
+    background-color: #F8EDED;
+    color:black;
+    font-size: 24px;
+    font-weight: 500;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border: 3px solid #ff3d58;
+}
+.clock span{
+    position: absolute;
+    transform: rotate(calc(30deg * var(--i)));
+    inset:12px;
+    text-align: center;
+}
+.clock span b{
+    transform: rotate(calc(-30deg * var(--i)));
+    display: inline-block;
+}
+.clock::before{
+content:"";
+width:8px;
+height:8px;
+border-radius:50%;
+background-color: black;
+z-index: 2;
+position:absolute;
+}
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: red;
+    border-radius: 25%;
+    width:28px;
+    height:28px;
+}
+.hand i{
+    position: absolute;
+    background-color: var(--clr);
+    height: var(--h);
+    width: 4px;
+    border-radius: 8px;
+}
+#myAudio{
+    /* display: none; */
+    order:4;
+}
+@media  screen and (max-width:321px) {
+
+    .container{
+    box-shadow: 0px 0px 3px 6px rgb(0, 0, 0);
+
+    }
+}
+@media  screen and (min-width:1439px) and (max-width:2560px) {
+    .container{
+    box-shadow: 0px 0px 12px 5px rgb(0, 0, 0);
+    
+    }
+.clock{
+    width:600px;
+    height:600px;
+    border: 6px solid #ff3d58;
+
+}
+.hand{
+    width:50px;
+    height: 50px;
+}
+#hour i{
+    height:200px;
+    width:8px;
+}
+#min i{
+    height:220px;
+    width:8px;
+}
+#sec i{
+    width:8px;
+    height:250px;
+}
+.clock span b{
+    font-size: 60px;
+}
+}
